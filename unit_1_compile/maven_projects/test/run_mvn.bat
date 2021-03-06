@@ -2,7 +2,7 @@
 @echo ---------Setting maven---------
 call setmaven.bat
 @echo .
-@echo ---------MVN project---------
+@echo ---------MVN project (my version java - 14)---------
 @echo .
 @echo ---------Delete build and create jar file---------
 @echo .
