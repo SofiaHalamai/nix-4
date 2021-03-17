@@ -1,6 +1,6 @@
-package ua.com.alevel.help_service;
+package ua.com.alevel.console_helper;
 
-public interface HelperService {
+public interface ConsoleHelper {
 
     String dataInput (String input);
     void dataOutput (String output);

@@ -1,11 +1,11 @@
-package ua.com.alevel.calc_service.impl;
+package ua.com.alevel.calculator.impl;
 
-import ua.com.alevel.calc_service.CalcService;
+import ua.com.alevel.calculator.Calculator;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class DefaultCalcService implements CalcService {
+public class DefaultCalculator implements Calculator {
 
     @Override
     public BigInteger squareRoot(BigInteger x) {

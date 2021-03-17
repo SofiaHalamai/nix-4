@@ -1,7 +1,7 @@
-package ua.com.alevel.help_service.factory;
+package ua.com.alevel.console_helper.factory;
 
 import org.reflections.Reflections;
-import ua.com.alevel.help_service.HelperService;
+import ua.com.alevel.console_helper.ConsoleHelper;
 
 import java.util.Set;
 
@@ -9,11 +9,12 @@ public class HelpFactory {
 
     private static HelpFactory instance;
     private Reflections reflections;
-    private Set<Class<? extends HelperService>> helpServices;
+
+    private Set<Class<? extends ConsoleHelper>> consoleHelper;
 
     private HelpFactory() {
         reflections = new Reflections("ua.com.alevel");
-        helpServices = reflections.getSubTypesOf(HelperService.class);
+        consoleHelper = reflections.getSubTypesOf(ConsoleHelper.class);
     }
 
     public static HelpFactory getInstance() {
@@ -23,11 +24,11 @@ public class HelpFactory {
         return instance;
     }
 
-    public HelperService getHelpService() {
-        for (Class<? extends HelperService> helpService : helpServices) {
-            if (!helpService.isAnnotationPresent(Deprecated.class)) {
+    public ConsoleHelper getHelpService() {
+        for (Class<? extends ConsoleHelper> helper : consoleHelper) {
+            if (!helper.isAnnotationPresent(Deprecated.class)) {
                 try {
-                    return helpService.getDeclaredConstructor().newInstance();
+                    return helper.getDeclaredConstructor().newInstance();
                 } catch (Exception e) {
                     throw new RuntimeException("Library usage error!");
                 }

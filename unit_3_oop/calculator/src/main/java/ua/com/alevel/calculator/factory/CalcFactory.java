@@ -1,7 +1,7 @@
-package ua.com.alevel.calc_service.factory;
+package ua.com.alevel.calculator.factory;
 
+import ua.com.alevel.calculator.Calculator;
 import org.reflections.Reflections;
-import ua.com.alevel.calc_service.CalcService;
 
 import java.util.Set;
 
@@ -9,11 +9,11 @@ public class CalcFactory {
 
     private static CalcFactory instance;
     private Reflections reflections;
-    private Set<Class<? extends CalcService>> calcServices;
+    private Set<Class<? extends Calculator>> calculator;
 
     private CalcFactory() {
         reflections = new Reflections("ua.com.alevel");
-        calcServices = reflections.getSubTypesOf(CalcService.class);
+        calculator = reflections.getSubTypesOf(Calculator.class);
     }
 
     public static CalcFactory getInstance() {
@@ -23,11 +23,11 @@ public class CalcFactory {
         return instance;
     }
 
-    public CalcService getCalcService() {
-        for (Class<? extends CalcService> calcService : calcServices) {
-            if (!calcService.isAnnotationPresent(Deprecated.class)) {
+    public Calculator getCalcService() {
+        for (Class<? extends Calculator> calc : calculator) {
+            if (!calc.isAnnotationPresent(Deprecated.class)) {
                 try {
-                    return calcService.getDeclaredConstructor().newInstance();
+                    return calc.getDeclaredConstructor().newInstance();
                 } catch (Exception e) {
                     throw new RuntimeException("Library usage error!");
                 }

@@ -1,10 +1,10 @@
-package ua.com.alevel.help_service.impl;
+package ua.com.alevel.console_helper.impl;
 
-import ua.com.alevel.help_service.HelperService;
+import ua.com.alevel.console_helper.ConsoleHelper;
 
 import java.util.Scanner;
 
-public class DefaultHelperService implements HelperService {
+public class DefaultConsoleHelper implements ConsoleHelper {
     public static Scanner scan = new Scanner(System.in);
 
     @Override

@@ -4,7 +4,8 @@
 @echo .
 @echo ---------Delete build and create jar file---------
 @echo .
-cd .\app_calc
+call mvn clean install
+cd ./app_calc
 call mvn clean install
 @echo .
 @echo ---------Run program---------

@@ -1,11 +1,11 @@
 package ua.com.alevel;
 
-import ua.com.alevel.selection_operations.ConsoleHelper;
+import ua.com.alevel.selection_operations.Helper;
 
 public class Main {
 
     public static void main(String[] args) {
-        ConsoleHelper consoleHelper = new ConsoleHelper();
-        consoleHelper.run();
+        Helper helper = new Helper();
+        helper.run();
     }
 }

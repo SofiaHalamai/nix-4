@@ -1,35 +1,36 @@
 package ua.com.alevel.selection_operations;
 
-import ua.com.alevel.help_service.HelperService;
-import ua.com.alevel.help_service.factory.HelpFactory;
-import ua.com.alevel.operations.Calculator;
+import ua.com.alevel.console_helper.ConsoleHelper;
+import ua.com.alevel.console_helper.factory.HelpFactory;
+import ua.com.alevel.operations.CalculationOperations;
 
-public class ConsoleHelper {
-    private final HelperService helperService = HelpFactory.getInstance().getHelpService();
+public class Helper {
+
+    private final ConsoleHelper consoleHelper = HelpFactory.getInstance().getHelpService();
 
     public void run() {
-        Calculator calculator = new Calculator();
+        CalculationOperations calculationOperations = new CalculationOperations();
         while (true) {
-            switch (helperService.dataInput("\n1. Operation sqrt(x)\n" +
+            switch (consoleHelper.dataInput("\n1. Operation sqrt(x)\n" +
                     "2. Operation summation (x + y)\n" +
                     "3. Operation subtraction (x - y)\n" +
                     "4. Operation multiplication (x * y)\n" +
                     "5. Operation division (x / y)\n" +
                     "6. Exit\n")) {
                 case "1":
-                    calculator.sqrt();
+                    calculationOperations.sqrt();
                     break;
                 case "2":
-                    calculator.sum();
+                    calculationOperations.sum();
                     break;
                 case "3":
-                    calculator.subtract();
+                    calculationOperations.subtract();
                     break;
                 case "4":
-                    calculator.multiply();
+                    calculationOperations.multiply();
                     break;
                 case "5":
-                    calculator.divide();
+                    calculationOperations.divide();
                     break;
                 case "6":
                     System.exit(0);
