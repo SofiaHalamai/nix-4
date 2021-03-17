@@ -1,7 +1,7 @@
-package ua.com.alevel.selection_operations;
+package ua.com.alevel.selectionOperations;
 
-import ua.com.alevel.console_helper.ConsoleHelper;
-import ua.com.alevel.console_helper.factory.HelpFactory;
+import ua.com.alevel.consoleHelper.ConsoleHelper;
+import ua.com.alevel.consoleHelper.factory.HelpFactory;
 import ua.com.alevel.operations.CalculationOperations;
 
 public class Helper {

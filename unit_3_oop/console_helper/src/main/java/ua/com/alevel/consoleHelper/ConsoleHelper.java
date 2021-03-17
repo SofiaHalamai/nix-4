@@ -1,4 +1,4 @@
-package ua.com.alevel.console_helper;
+package ua.com.alevel.consoleHelper;
 
 public interface ConsoleHelper {
 

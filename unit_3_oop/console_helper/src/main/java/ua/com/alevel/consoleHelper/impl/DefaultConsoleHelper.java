@@ -1,6 +1,6 @@
-package ua.com.alevel.console_helper.impl;
+package ua.com.alevel.consoleHelper.impl;
 
-import ua.com.alevel.console_helper.ConsoleHelper;
+import ua.com.alevel.consoleHelper.ConsoleHelper;
 
 import java.util.Scanner;
 

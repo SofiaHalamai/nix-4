@@ -1,6 +1,6 @@
 package ua.com.alevel;
 
-import ua.com.alevel.selection_operations.Helper;
+import ua.com.alevel.selectionOperations.Helper;
 
 public class Main {
 

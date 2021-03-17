@@ -2,8 +2,8 @@ package ua.com.alevel.operations;
 
 import ua.com.alevel.calculator.Calculator;
 import ua.com.alevel.calculator.factory.CalcFactory;
-import ua.com.alevel.console_helper.ConsoleHelper;
-import ua.com.alevel.console_helper.factory.HelpFactory;
+import ua.com.alevel.consoleHelper.ConsoleHelper;
+import ua.com.alevel.consoleHelper.factory.HelpFactory;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

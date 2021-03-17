@@ -1,7 +1,7 @@
-package ua.com.alevel.console_helper.factory;
+package ua.com.alevel.consoleHelper.factory;
 
 import org.reflections.Reflections;
-import ua.com.alevel.console_helper.ConsoleHelper;
+import ua.com.alevel.consoleHelper.ConsoleHelper;
 
 import java.util.Set;
 
