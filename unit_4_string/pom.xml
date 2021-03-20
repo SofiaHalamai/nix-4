@@ -11,6 +11,7 @@
     <modules>
         <module>reverse_string</module>
         <module>app_reverse_string</module>
+        <module>console_helper</module>
     </modules>
 
     <properties>
