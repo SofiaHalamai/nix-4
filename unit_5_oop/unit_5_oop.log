@@ -1,0 +1,40 @@
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:18 - Start book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:20 - Finish book create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:18 - Start author create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:20 - Finish author create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:18 - Start book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:20 - Finish book create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:18 - Start author create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:20 - Finish author create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:18 - Start book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:20 - Finish book create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:18 - Start author create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:20 - Finish author create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:18 - Start book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:20 - Finish book create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:18 - Start author create
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:20 - Finish author create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:45 - Return find all of authors
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:34 - Start book delete
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:36 - Finish book delete
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:42 - Return find by ID book
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:26 - Start book update
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:28 - Finish book update
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:42 - Return find by ID book
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:39 - Return find by ID author
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:25 - Start author update
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:27 - Finish author update
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:39 - Return find by ID author
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:42 - Return find by ID book
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:39 - Return find by ID author
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:39 - Return find by ID author
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:18 - Start book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:20 - Finish book create
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:42 - Return find by ID book
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] BookServiceImpl:48 - Return find all of books
+2021-04-04 03:49:41 [INFO ] AuthorServiceImpl:45 - Return find all of authors
