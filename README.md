@@ -21,5 +21,7 @@
 ## * 1. the user independently sets the date format for input and output of each date;
 ## * 2. we can use separators like "/", "-", ":";
 ## * 3. to set the year, month, day, hour, minute, second and millisecond, respectively (yy, yyyy), (m, mm, mmm), (d, dd), hh, mn, ms, ml; 
+## * 4. if you want to specify only one of the temporary units, then specify in the format ONLY this type - yyyy or mm ...
+## * 5. the rest will be specified by default (year - 2021, month - 01, day - 01, hour - 00, minute - 00, second - 00, millisecond - 00)
 ## * mmm - the name of the month is entered in English!
 ***
