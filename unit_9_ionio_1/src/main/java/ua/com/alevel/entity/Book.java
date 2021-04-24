@@ -23,8 +23,8 @@ public class Book extends BaseEntity{
     }
 
     public String toString() {
-        return "{Name = '" + name + '\''
-                + ", id = " + getId()
+        return "{ID = " + getId()
+                + ", Name = '" + name + '\''
                 + " , authors = '" + authors + '\''
                 +"}";
     }

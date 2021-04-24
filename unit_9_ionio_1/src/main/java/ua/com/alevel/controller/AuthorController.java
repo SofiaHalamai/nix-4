@@ -57,7 +57,7 @@ public class AuthorController {
         }
     }
 
-    private void createAuthor(){
+    private void createAuthor() {
         try {
             Author author = new Author();
             System.out.print("Enter first name: ");
@@ -78,28 +78,26 @@ public class AuthorController {
 
     }
 
-    private void update(){
+    private void update() {
         try {
             System.out.print("Enter the ID of the author you want to update: ");
             int id = Integer.parseInt(reader.readLine());
-            if (authorService.findById(id) == null) return;
-            else {
-                Author author = authorService.findById(id);
-                System.out.print("Enter NEW first name: ");
-                author.setFirstName(reader.readLine());
-                System.out.print("Enter NEW last name: ");
-                author.setLastName(reader.readLine());
-                System.out.print("Enter amount of books: ");
-                int N = Integer.parseInt(reader.readLine());
-                List<String> b = new ArrayList<>();
-                for (int i = 0; i < N; i++) {
-                    System.out.print("Enter name book: ");
-                    String nameBook = reader.readLine();
-                    b.add(nameBook);
-                }
-                author.setBooks(b);
-                authorService.update(author);
+            Author author = new Author();
+            author.setId(id);
+            System.out.print("Enter NEW first name: ");
+            author.setFirstName(reader.readLine());
+            System.out.print("Enter NEW last name: ");
+            author.setLastName(reader.readLine());
+            System.out.print("Enter amount of books: ");
+            int N = Integer.parseInt(reader.readLine());
+            List<String> b = new ArrayList<>();
+            for (int i = 0; i < N; i++) {
+                System.out.print("Enter name book: ");
+                String nameBook = reader.readLine();
+                b.add(nameBook);
             }
+            author.setBooks(b);
+            authorService.update(author);
         } catch (Exception e) {
             System.out.println("Incorrect input!");
         }
@@ -109,11 +107,12 @@ public class AuthorController {
         System.out.println("Authors: " + authorService.findAll());
     }
 
-    private void readById(){
+    private void readById() {
         try {
             System.out.print("Enter the ID of the author you want to read: ");
             int id = Integer.parseInt(reader.readLine());
-            if (authorService.findById(id) == null) return;
+            if (authorService.findById(id) == null)
+                return;
             else
                 System.out.println("Author: " + authorService.findById(id));
         } catch (Exception e) {
@@ -122,9 +121,9 @@ public class AuthorController {
     }
 
     private void delete() {
-        try{
-        System.out.print("Enter the ID of the author you want to delete: ");
-        authorService.delete(Integer.parseInt(reader.readLine()));
+        try {
+            System.out.print("Enter the ID of the author you want to delete: ");
+            authorService.delete(Integer.parseInt(reader.readLine()));
         } catch (Exception e) {
             System.out.println("Incorrect input!");
         }

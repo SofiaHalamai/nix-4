@@ -1,5 +1,3 @@
-package ua.com.alevel;
-
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;

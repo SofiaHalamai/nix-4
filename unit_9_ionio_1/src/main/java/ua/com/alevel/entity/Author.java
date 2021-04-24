@@ -23,9 +23,9 @@ public class Author extends BaseEntity{
     }
 
     public String toString() {
-        return "{First name = '" + firstName + '\''
+        return "{ID = " + getId()
+                + ", First name = '" + firstName + '\''
                 + ", Last name = '" + lastName + '\''
-                + ", Books = '" + books + '\''
-                + ", id = " + getId() + "}";
+                + ", Books = '" + books + "}";
     }
 }

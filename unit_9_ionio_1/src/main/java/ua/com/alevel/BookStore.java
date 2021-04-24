@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class BookStore {
 
-
     public static void main(String[] args) {
         CrudController controller = new CrudController();
         try {

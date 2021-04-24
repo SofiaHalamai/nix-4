@@ -1,11 +1,11 @@
-package ua.com.alevel.service;
+package ua.com.alevel.dao;
 
 import ua.com.alevel.entity.Author;
 import ua.com.alevel.entity.Book;
 
 import java.util.List;
 
-public interface AuthorService <A extends Author>{
+public interface AuthorDao <A extends Author>{
 
     void create(A a);
     void update(A a);

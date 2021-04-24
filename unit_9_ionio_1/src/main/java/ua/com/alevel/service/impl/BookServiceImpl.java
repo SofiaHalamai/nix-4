@@ -2,7 +2,8 @@ package ua.com.alevel.service.impl;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ua.com.alevel.db.DBInCSV;
+import ua.com.alevel.dao.BookDao;
+import ua.com.alevel.dao.impl.BookDaoImpl;
 import ua.com.alevel.entity.Author;
 import ua.com.alevel.entity.Book;
 import ua.com.alevel.service.BookService;
@@ -11,48 +12,61 @@ import java.util.List;
 
 public class BookServiceImpl implements BookService<Book> {
 
+    private final BookDao bookDao = new BookDaoImpl();
     private static final Logger LOG = LogManager.getLogger(BookServiceImpl.class);
-    private final DBInCSV db = DBInCSV.getInstance();
 
     @Override
     public void create(Book book) {
         LOG.info("Start book create");
-        db.createBook(book);
+        bookDao.create(book);
         LOG.info("Finish book create");
-
     }
 
 
     @Override
     public void update(Book book) {
-        LOG.info("Start book update");
-        db.updateBook(book);
-        LOG.info("Finish book update");
-
+        if (existBook(book.getId())) {
+            LOG.info("Start book update");
+            bookDao.update(book);
+            LOG.info("Finish book update");
+        } else
+            LOG.error("Incorrect ID! No such ID!");
     }
 
     @Override
     public void delete(int id) {
-        LOG.info("Start book delete");
-        db.deleteBook(id);
-        LOG.info("Finish book delete");
-
+        if (existBook(id)) {
+            LOG.info("Start book delete");
+            bookDao.delete(id);
+            LOG.info("Finish book delete");
+        } else
+            LOG.error("Incorrect ID! No such ID!");
     }
 
     @Override
     public Book findById(int id) {
-        LOG.info("Return find by ID book");
-        return db.findBookById(id);
+        if (existBook(id)) {
+            LOG.info("Return find by ID book");
+            return bookDao.findById(id);
+        } else {
+            LOG.error("Incorrect ID! No such ID!");
+            return null;
+        }
     }
 
     @Override
     public List<Book> findAll() {
         LOG.info("Return find all of books");
-        return db.findAllBook();
+        return bookDao.findAll();
     }
+
     @Override
     public List<Book> findBooksByAuthor(Author author) {
         LOG.info("Return find books by author");
-        return db.findBooksByAuthor(author);
+        return bookDao.findBooksByAuthor(author);
+    }
+
+    private boolean existBook(int id) {
+        return bookDao.findById(id) != null;
     }
 }
