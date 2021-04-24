@@ -1,6 +1,6 @@
 # UNIT 9
 ***
-## * If you want to run the program, open folder unit_9_ionio_1 and  just click on run.bat 
+## * If you want to run the program, open folder unit_9_ionio_1 and just click on run.bat 
 ## * _it is assumed that the user already has maven installed_
 
 ## * A SMALL NOTE ABOUT OF THE PROGRAM:
