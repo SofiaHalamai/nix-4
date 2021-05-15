@@ -20,7 +20,7 @@
 #  * TASK 3
 ##  In this case, we read from the file the number of cities, their name, the number of neighbors and connections with them, the number of paths to be found and, accordingly (city - the beginning of the path and the city - the end of the path).
 ##  For the example presented in the program, this graph corresponds:
-![alt-текст]( "graph")
+![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/graph.png "graph")
 
 ##  The matrix of links is depicted using the table:
 | Gdansk | Bydgoszcz | Toruń | Warsaw | Kharkov |
@@ -32,15 +32,15 @@
 |    0   |     0     |   5   |    4   |    0    |
 
 ##  The shortest path from Gdansk to Warsaw:
-![alt-текст]( "path from Gdansk to Warsaw")
+![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/way_from_Gdansk_to_Warsaw.png "path from Gdansk to Warsaw")
 
 ##  The shortest path from Bydgoszcz to Warsaw:
-![alt-текст]( "path from Bydgoszcz to Warsaw")
+![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/way_from_Bydgoszcz_to_Warsaw.png "path from Bydgoszcz to Warsaw")
 
 ##  The shortest path from Gdansk to Kharkov:
-![alt-текст]( "path from Gdansk to Kharkov")
+![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/way_from_Gdansk_to_Kharkov.png "path from Gdansk to Kharkov")
 
 ##  The shortest path from Warsaw to Kharkov:
-![alt-текст]( "path from Warsaw to Kharkov")
+![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/way_from_Warsaw_to_Kharkov.png "path from Warsaw to Kharkov")
 
 ***
