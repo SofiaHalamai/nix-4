@@ -14,8 +14,8 @@ public class JdbcLocationDao implements LocationDao {
     public int getNumberOfLocation() throws SQLException {
         ResultSet result;
         int N = 0;
-        try {
-            PreparedStatement prSt = getConnectionToDb().prepareStatement("SELECT * FROM locations WHERE id  = (SELECT MAX (id) FROM locations)");
+        try (PreparedStatement prSt = getConnectionToDb().prepareStatement(
+                "SELECT * FROM locations WHERE id  = (SELECT MAX (id) FROM locations)")) {
             result = prSt.executeQuery();
             while (result.next()) {
                 N = result.getInt("id");
@@ -28,9 +28,8 @@ public class JdbcLocationDao implements LocationDao {
 
     @Override
     public void addLocationToDb(List<Location> cities) {
-        try {
-            PreparedStatement prSt = getConnectionToDb().prepareStatement(
-                    "INSERT INTO locations (name) VALUES (?)");
+        try (PreparedStatement prSt = getConnectionToDb().prepareStatement(
+                "INSERT INTO locations (name) VALUES (?)")) {
             for (Location city : cities) {
                 prSt.setString(1, city.getName());
                 prSt.addBatch();

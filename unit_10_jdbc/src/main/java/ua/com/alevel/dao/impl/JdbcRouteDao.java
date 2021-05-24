@@ -37,8 +37,8 @@ public class JdbcRouteDao implements RouteDao {
     public List<Route> getAllRoute() {
         List <Route> routes = new ArrayList<>();
         ResultSet resSet;
-        try {
-            PreparedStatement prSt = getConnectionToDb().prepareStatement("SELECT * FROM routes");
+        try (PreparedStatement prSt = getConnectionToDb().prepareStatement(
+                "SELECT * FROM routes")){
             resSet = prSt.executeQuery();
             while (resSet.next()) {
                 routes.add(new Route(resSet.getInt("id"), resSet.getInt("from_id"),

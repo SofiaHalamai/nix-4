@@ -16,9 +16,8 @@ public class JdbcProblemDao implements ProblemDao {
 
     @Override
     public void addProblemToDb(Problem problem) {
-        try {
-            PreparedStatement prSt = getConnectionToDb().prepareStatement(
-                    "INSERT INTO problems (from_id, to_id) VALUES (?, ?)");
+        try (PreparedStatement prSt = getConnectionToDb().prepareStatement(
+                "INSERT INTO problems (from_id, to_id) VALUES (?, ?)")){
             prSt.setInt(1, problem.getFromId());
             prSt.setInt(2, problem.getToId());
             prSt.executeQuery();
@@ -31,9 +30,8 @@ public class JdbcProblemDao implements ProblemDao {
     public List<Problem> getAllProblems() {
         List <Problem> problems = new ArrayList<>();
         ResultSet resSet;
-        try  {
-            PreparedStatement prSt = getConnectionToDb().prepareStatement(
-                    "SELECT * FROM problems");
+        try ( PreparedStatement prSt = getConnectionToDb().prepareStatement(
+                "SELECT * FROM problems")) {
             resSet = prSt.executeQuery();
             while (resSet.next()) {
                 problems.add(new Problem(resSet.getInt("id"), resSet.getInt("from_id"),
