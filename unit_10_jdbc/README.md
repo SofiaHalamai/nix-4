@@ -1,5 +1,6 @@
 # UNIT 10
 ***
+##  To create the table, the script presented in the file -> SQL_Scripts_DDL.txt was used!
 ##  For the example presented in the program, this graph corresponds:
 ![alt-текст](https://github.com/SofiaHalamai/nix-4/blob/main/module_2/src/main/resources/images/graph.png "graph")
 
