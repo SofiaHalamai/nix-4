@@ -1,0 +1,59 @@
+create table if not exists locations
+(
+	id serial not null
+		constraint locations_pkey
+			primary key,
+	name varchar(255) not null
+		constraint locations_name_key
+			unique
+);
+
+alter table locations owner to postgres;
+
+create table if not exists routes
+(
+	id serial not null
+		constraint routes_pkey
+			primary key,
+	from_id integer
+		constraint routes_from_id_fkey
+			references locations,
+	to_id integer
+		constraint routes_to_id_fkey
+			references locations,
+	cost integer
+		constraint routes_cost_check
+			check (cost > 0)
+);
+
+alter table routes owner to postgres;
+
+create table if not exists problems
+(
+	id serial not null
+		constraint problems_pkey
+			primary key,
+	from_id integer
+		constraint problems_from_id_fkey
+			references locations,
+	to_id integer
+		constraint problems_to_id_fkey
+			references locations
+);
+
+alter table problems owner to postgres;
+
+create table if not exists solutions
+(
+	problem_id integer not null
+		constraint solutions_pkey
+			primary key
+		constraint solutions_problem_id_fkey
+			references problems,
+	cost integer
+		constraint solutions_cost_check
+			check ((cost > 0) AND (cost < 200000))
+);
+
+alter table solutions owner to postgres;
+
