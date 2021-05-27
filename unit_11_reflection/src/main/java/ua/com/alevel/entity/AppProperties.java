@@ -1,4 +1,4 @@
-package ua.com.alevel;
+package ua.com.alevel.entity;
 
 import ua.com.alevel.annotation.PropertyKey;
 
