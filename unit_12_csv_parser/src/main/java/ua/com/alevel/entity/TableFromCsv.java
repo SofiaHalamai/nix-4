@@ -27,11 +27,11 @@ public class TableFromCsv {
     }
 
     public String getCell(int indexRow, int indexColumn) {
-        return csvMatrix[indexRow][indexColumn];
+        return csvMatrix[indexRow + 1][indexColumn];
     }
 
     public String getCell(int indexRow, String headline) {
-        return csvMatrix[indexRow][headlines.indexOf(headline)];
+        return csvMatrix[indexRow + 1][headlines.indexOf(headline)];
     }
 
     public int sizeOfRows() {

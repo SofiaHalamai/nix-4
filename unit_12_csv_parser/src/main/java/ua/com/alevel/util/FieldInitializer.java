@@ -18,7 +18,7 @@ public class FieldInitializer {
         Constructor c = getConstructor(tClass);
         T current;
         String property;
-        for (int i = 1; i < tableFromCsv.sizeOfRows(); i++) {
+        for (int i = 0; i < tableFromCsv.sizeOfRows() - 1; i++) {
             try {
                 current = (T) Objects.requireNonNull(c).newInstance();
 
