@@ -29,15 +29,15 @@ public class FieldInitializer {
                         field.setAccessible(true);
                         String type = field.getType().getName();
                         if (int.class.getName().equals(type) || Integer.class.getName().equals(type)) {
-                            field.setInt(current, Integer.parseInt(property));
+                            field.set(current, Integer.parseInt(property));
                         } else if (long.class.getName().equals(type) || Long.class.getName().equals(type)) {
-                            field.setLong(current, Long.parseLong(property));
+                            field.set (current, Long.parseLong(property));
                         } else if (double.class.getName().equals(type) || Double.class.getName().equals(type)) {
-                            field.setDouble(current, Double.parseDouble(property));
+                            field.set (current, Double.parseDouble(property));
                         } else if (char.class.getName().equals(type) || Character.class.getName().equals(type)) {
-                            field.setChar(current, property.charAt(0));
+                            field.set (current, property.charAt(0));
                         } else if (boolean.class.getName().equals(type) || Boolean.class.getName().equals(type)) {
-                            field.setBoolean(current, Boolean.parseBoolean(property));
+                            field.set (current, Boolean.parseBoolean(property));
                         } else if (String.class.getName().equals(type)) {
                             field.set(current, property);
                         } else {

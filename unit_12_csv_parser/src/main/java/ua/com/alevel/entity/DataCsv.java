@@ -16,6 +16,9 @@ public class DataCsv {
     @ValueOfCell("Age")
     private int age;
 
+    @ValueOfCell("Active")
+    public Boolean active;
+
     @ValueOfCell("Points")
     public double numberOfPoints;
 
@@ -26,6 +29,7 @@ public class DataCsv {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", active=" + active +
                 ", numberOfPoints=" + numberOfPoints +
                 '}';
     }

@@ -14,7 +14,7 @@ public class AppProperties {
     public int age;
 
     @PropertyKey("status")
-    public boolean active;
+    public Boolean active;
 
     @PropertyKey("points")
     public double numberOfPoints;
