@@ -1,6 +1,7 @@
 package ua.com.alevel.model.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "lessons")
-@Data
+@Getter
+@Setter
 public class Lesson {
 
     @Id

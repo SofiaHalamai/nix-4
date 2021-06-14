@@ -1,13 +1,15 @@
 package ua.com.alevel.model.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table (name = "topics")
-@Data
+@Getter
+@Setter
 public class Topic {
 
     @Id

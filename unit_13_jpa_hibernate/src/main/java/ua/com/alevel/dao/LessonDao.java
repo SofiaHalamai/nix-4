@@ -25,7 +25,7 @@ public class LessonDao {
             }
             Query query = session.createQuery("select l from Student st inner join Group gr on gr.id = st.group.id " +
                     "and st.id = :idStudent join Lesson l on l.course.id = gr.course.id " +
-                    "and l.dateAndTime > CURRENT_DATE order by l.dateAndTime");
+                    "and l.dateAndTime > CURRENT_DATE order by l.dateAndTime").setMaxResults(1);
             query.setParameter("idStudent", id);
             session.getTransaction().commit();
             if (query.getResultList().isEmpty()) {
