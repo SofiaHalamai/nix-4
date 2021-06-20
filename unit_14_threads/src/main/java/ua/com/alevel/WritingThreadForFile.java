@@ -8,9 +8,9 @@ import java.io.RandomAccessFile;
 
 public class WritingThreadForFile implements Runnable {
 
-    private static Logger log = LogManager.getLogger(WritingThreadForFile.class);
+    private Logger log = LogManager.getLogger(WritingThreadForFile.class);
 
-    StringBuffer stringBuffer;
+    private final StringBuffer stringBuffer;
 
     public WritingThreadForFile(StringBuffer stringBuffer) {
         this.stringBuffer = stringBuffer;
@@ -19,10 +19,20 @@ public class WritingThreadForFile implements Runnable {
     @Override
     public void run() {
         try (RandomAccessFile writerAndReader = new RandomAccessFile("output.txt", "rw")) {
+            String string;
             while (!stringBuffer.toString().contains("quit")) {
-                if (stringBuffer.toString().length() != 0) {
-                    writerAndReader.setLength(0L);
-                    writerAndReader.writeBytes(stringBuffer.toString());
+                synchronized (stringBuffer) {
+                    string = stringBuffer.toString();
+                    if (string.contains("quit")) break;
+                    if (string.length() == 0) {
+                        Thread.sleep(1000);
+                        continue;
+                    }
+                    if (checkingIfStringChanged(writerAndReader, string)) {
+                        writerAndReader.setLength(0L);
+                        System.out.println("WritingThreadForFile.run");
+                        writerAndReader.writeBytes(string);
+                    }
                 }
                 Thread.sleep(1000);
             }
@@ -31,5 +41,10 @@ public class WritingThreadForFile implements Runnable {
         } catch (InterruptedException e) {
             log.error("Terminate the thread");
         }
+    }
+
+    private boolean checkingIfStringChanged(RandomAccessFile reader, String string) throws IOException {
+        reader.seek(0);
+        return !reader.readLine().equals(string);
     }
 }

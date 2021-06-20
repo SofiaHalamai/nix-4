@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AccumulatorThreadString implements Runnable {
 
-    StringBuffer stringBuffer;
+    private StringBuffer stringBuffer;
 
     public AccumulatorThreadString(StringBuffer stringBuffer) {
         this.stringBuffer = stringBuffer;
