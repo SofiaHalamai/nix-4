@@ -20,19 +20,24 @@ public class WritingThreadForFile implements Runnable {
     public void run() {
         try (RandomAccessFile writerAndReader = new RandomAccessFile("output.txt", "rw")) {
             String string;
-            while (!stringBuffer.toString().contains("quit")) {
+            boolean flagForQuit = false;
+            while (true) {
+                string = stringBuffer.toString();
                 synchronized (stringBuffer) {
-                    string = stringBuffer.toString();
-                    if (string.contains("quit")) break;
+                    if (string.contains("quit")){
+                        stringBuffer.delete (string.length()-4, string.length()+1);
+                        string = stringBuffer.toString();
+                        flagForQuit = true;
+                    }
                     if (string.length() == 0) {
                         Thread.sleep(1000);
                         continue;
                     }
                     if (checkingIfStringChanged(writerAndReader, string)) {
                         writerAndReader.setLength(0L);
-                        System.out.println("WritingThreadForFile.run");
                         writerAndReader.writeBytes(string);
                     }
+                    if (flagForQuit) break;
                 }
                 Thread.sleep(1000);
             }
